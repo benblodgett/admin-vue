@@ -1,16 +1,24 @@
-import { fetchItems } from '@/api/items';
+import api from '@/api'
 
 const getItems = context => {
-  fetchItems
-    .then(response => {
-      context.commit('ITEMS_UPDATED', response);
-    })
-    .catch(error => {
-      // eslint-disable-next-line
-      console.log(error);
-    });
+  api.getUrl(context, 'https://jsonplaceholder.typicode.com/posts', 'ITEMS_UPDATED');
 };
 
+const getItem = (context, id) => {
+  api.getUrl(context, 'https://jsonplaceholder.typicode.com/posts/' + id, 'ITEM_UPDATED');
+};
+
+const createItem = (context, payload) => {
+  api.postUrl(context, 'https://jsonplaceholder.typicode.com/posts', payload, 'ITEM_UPDATED');
+}
+
+const resetItem = context => {
+  context.commit('ITEM_RESET');
+}
+
 export default {
-  getItems
+  getItems,
+  getItem,
+  createItem,
+  resetItem
 };

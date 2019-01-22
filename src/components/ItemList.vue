@@ -3,7 +3,7 @@
     <v-data-table :headers="headers" :items="items">
       <template slot="items" slot-scope="props">
         <td>{{ props.item.id }}</td>
-        <td>{{ props.item.title }}</td>
+        <td><router-link :to="{ name: 'ItemShow', params: { id: props.item.id } }">{{ props.item.title }}</router-link></td>
       </template>
     </v-data-table>
   </v-flex>

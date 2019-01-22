@@ -14,3 +14,9 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app');
+
+router.beforeEach((to, from, next) => {
+    store.dispatch('global/updateError', false, null)
+    store.dispatch('global/updateLoading', true)
+    next()
+})
