@@ -1,7 +1,10 @@
 <template>
   <span>
-    <v-navigation-drawer v-model="drawer" app dark fixed>
-      <v-list dense>
+    <v-navigation-drawer app dark fixed>
+      <v-toolbar flat>
+        <v-toolbar-title>Vue Admin</v-toolbar-title>
+      </v-toolbar>
+      <v-list>
         <v-list-tile to="/">
           <v-list-tile-action>
             <v-icon>home</v-icon>
@@ -21,13 +24,8 @@
           </v-list-tile>
         </v-list-group>
         <v-divider></v-divider>
-        </v-list>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="indigo" dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Vue Admin</v-toolbar-title>
-    </v-toolbar>
   </span>
 </template>
 
@@ -36,7 +34,6 @@ export default {
   name: 'AppNavigation',
   data() {
     return {
-      drawer: true,
     }
   }
 };

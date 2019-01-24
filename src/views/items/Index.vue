@@ -8,7 +8,7 @@
 
 <script>
   import { mapGetters } from 'vuex'
-  import ItemList from '@/components/ItemList'
+  import ItemList from '@/components/items/ItemList'
 
   export default {
     name: 'ItemsIndex',
