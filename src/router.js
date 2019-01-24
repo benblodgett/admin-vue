@@ -27,7 +27,7 @@ export default new Router({
         import(/* webpackChunkName: "ItemsNew" */ './views/items/New.vue')
     },
     {
-      path: '/item/:id',
+      path: '/items/:id',
       name: 'ItemShow',
       component: () =>
         import(/* webpackChunkName: "ItemShow" */ './views/items/Show.vue')

@@ -1,5 +1,4 @@
 import '@babel/polyfill';
-import '@mdi/font/css/materialdesignicons.css'
 import Vue from 'vue';
 import './plugins/axios'
 import './plugins/vuetify';
